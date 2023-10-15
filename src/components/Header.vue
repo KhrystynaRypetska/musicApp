@@ -28,7 +28,7 @@
               <a
                   class="px-2 text-white"
                  href="#"
-                  @click.prevent="userStore.singOut"
+                  @click.prevent="singOut"
               >
                 Logout</a>
             </li>
@@ -53,6 +53,13 @@ export default {
     toggleAuthModal() {
       this.modalStore.isOpen = !this.modalStore.isOpen;
       console.log(this.modalStore.isOpen);
+    },
+    singOut() {
+      this.userStore.singOut();
+
+      if (this.$route.meta.requiresAuth) {
+        this.$router.push({ name: "home" })
+      }
     }
   }
 
