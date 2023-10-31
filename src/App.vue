@@ -2,7 +2,11 @@
 <template>
   <Header/>
 
-  <router-view></router-view>
+  <router-view v-slot="{ Component }">
+    <transition class="fade" mode="out-in">
+      <component :is="Component"></component>
+    </transition>
+  </router-view>
 
   <app-player />
   <auth/>
@@ -35,3 +39,18 @@ export default {
   }
 }
 </script>
+
+<style>
+.fade-enter-form {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: all .5s linear;
+}
+
+.fade-leave-to {
+  transition: all .5s linear;
+  opacity: 0;
+}
+</style>
