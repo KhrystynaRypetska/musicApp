@@ -29,7 +29,7 @@ export default defineStore("user", {
           this.userLoggedIn = true;
         },
         async singOut() {
-            await auth.singOut;
+            await auth.singOut();
             this.userLoggedIn = false;
         },
     }

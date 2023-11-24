@@ -24,6 +24,7 @@ import AppPlayer from "@/components/Player.vue"
 
 export default {
   name: "App",
+
   components: {
     Auth,
     Header,
@@ -41,6 +42,16 @@ export default {
 </script>
 
 <style>
+#app {
+  width: 100%;
+  height: 3000px;
+  position: relative;
+}
+.scrollPosition {
+  position: fixed;
+  left: 10px;
+  right: 10px;
+}
 .fade-enter-form {
   opacity: 0;
 }
